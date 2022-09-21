@@ -1,0 +1,2 @@
+FROM docker.apphn.ocp.na.xom.com/confluentinc/cp-kafka-connect:7.0.1
+RUN rm /usr/share/java/cp-base-new/slf4j-log4j12-*.jar
