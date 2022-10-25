@@ -9,7 +9,6 @@ RUN sed -i "s@# http.proxyHost=@http.proxyHost=http://hoeprx01.na.xom.com:8080@g
     sed -i "s@# http.proxyPort=80@http.proxyPort=8080@g" /tmp/net.properties && \
     sed -i "s@# https.proxyHost=@https.proxyHost=http://hoeprx01.na.xom.com:8080@g" /tmp/net.properties && \
     sed -i "s@# https.proxyPort=443@https.proxyPort=8080@g" /tmp/net.properties && \
-    rm /usr/lib/jvm/zulu11/conf/net.properties
     cp /tmp/net.properties /usr/lib/jvm/zulu11/conf/net.properties
     confluent-hub install --no-prompt confluentinc/kafka-connect-jdbc:latest
 # RUN confluent-hub install --no-prompt confluentinc/kafka-connect-jdbc:latest
