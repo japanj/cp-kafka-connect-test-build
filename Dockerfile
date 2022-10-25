@@ -4,6 +4,9 @@ RUN rm /usr/share/java/cp-base-new/slf4j-log4j12-*.jar
 
 # can connect (test via curl command)
 # RUN curl -X GET https://d1i4a15mxbxib1.cloudfront.net/api/plugins/confluentinc/kafka-connect-jdbc/versions/10.6.0/confluentinc-kafka-connect-jdbc-10.6.0.zip
+FROM docker.apphn.ocp.na.xom.com/ubuntu:20.04
+RUN apt-get update && \
+    apt-get install unzip
 RUN cp /usr/lib/jvm/zulu11/conf/net.properties /tmp/net.properties
 RUN sed -i "s@# http.proxyHost=@http.proxyHost=http://hoeprx01.na.xom.com:8080@g" /tmp/net.properties && \
     sed -i "s@# http.proxyPort=80@http.proxyPort=8080@g" /tmp/net.properties && \
